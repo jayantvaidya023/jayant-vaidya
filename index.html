@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nutritionist - Your Personal Diet Coach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Your Profile</h3>
+                <button class="btn btn--sm sidebar-toggle" id="sidebarToggle">×</button>
+            </div>
+            
+            <div class="profile-card" id="profileCard">
+                <div class="profile-placeholder">
+                    <div class="profile-icon">👤</div>
+                    <p>Complete your profile to get started!</p>
+                </div>
+            </div>
+
+            <div class="stats-section" id="statsSection" style="display: none;">
+                <div class="stat-item">
+                    <label>Daily Calories</label>
+                    <span id="dailyCalories">-</span>
+                </div>
+                <div class="stat-item">
+                    <label>BMR</label>
+                    <span id="bmrValue">-</span>
+                </div>
+                <div class="stat-item">
+                    <label>Goal</label>
+                    <span id="userGoal">-</span>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="btn btn--outline btn--sm action-btn" onclick="requestNewPlan()">
+                    📋 New Meal Plan
+                </button>
+                <button class="btn btn--outline btn--sm action-btn" onclick="askNutritionTip()">
+                    💡 Nutrition Tip
+                </button>
+                <button class="btn btn--outline btn--sm action-btn" onclick="resetProfile()">
+                    🔄 Reset Profile
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <button class="btn btn--sm mobile-sidebar-toggle" id="mobileSidebarToggle">
+                    ☰
+                </button>
+                <h2>AI Nutritionist Assistant</h2>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+            </div>
+
+            <div class="chat-container" id="chatContainer">
+                <div class="welcome-message">
+                    <div class="bot-avatar">🥗</div>
+                    <div class="message-content">
+                        <h3>Welcome to Your AI Nutritionist! 👋</h3>
+                        <p>I'm here to help you create personalized diet plans and provide nutrition guidance. Let's start by getting to know you better!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <input type="text" id="chatInput" placeholder="Type your message here..." class="chat-input">
+                    <button id="sendButton" class="btn btn--primary send-btn">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+                <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>AI Nutritionist is typing...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
